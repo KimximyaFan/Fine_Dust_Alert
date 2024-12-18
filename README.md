@@ -56,9 +56,9 @@
 
 ![image](https://github.com/user-attachments/assets/1e008c06-feb3-4e57-9104-01f70c95dad9)
 
-![image](https://github.com/user-attachments/assets/241f2462-fe18-4999-963e-cb7200f81a0a)
-
 사용한 API는 서울시 공공데이터 입니다.
+
+![image](https://github.com/user-attachments/assets/241f2462-fe18-4999-963e-cb7200f81a0a)
 
 그중에서 서울시 대기환경 평균 현황을 이용했습니다.
 
