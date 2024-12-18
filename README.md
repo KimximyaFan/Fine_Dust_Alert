@@ -50,6 +50,27 @@
 어플을 종료해도 백그라운드에서 워커가 돌아가면서 지속적으로 주기마다 서울시 api를 호출해서 대기 정보를 체크합니다.
 
 
+## 구현
 
+### API
 
+![image](https://github.com/user-attachments/assets/1e008c06-feb3-4e57-9104-01f70c95dad9)
 
+![image](https://github.com/user-attachments/assets/241f2462-fe18-4999-963e-cb7200f81a0a)
+
+사용한 API는 서울시 공공데이터 입니다.
+
+그중에서 서울시 대기환경 평균 현황을 이용했습니다.
+
+![image](https://github.com/user-attachments/assets/b9d342a5-775d-450f-983e-b9ec473a0b9f)
+![image](https://github.com/user-attachments/assets/bc4fc4b0-64e4-43a5-96da-4042df209844)
+![image](https://github.com/user-attachments/assets/318d1d08-5d44-46ac-b202-7a91bf35acdd)
+
+retrofit을 이용해서 api를 호출 했습니다.
+
+### 백그라운드 알림
+
+![image](https://github.com/user-attachments/assets/1946d721-b294-411c-8d8b-f2ed81fd3fb7)
+![image](https://github.com/user-attachments/assets/62468dfc-4d21-4d70-9aad-b899b5cee111)
+
+Worker 를 이용해서 백그라운드 알림을 구현했습니다.
