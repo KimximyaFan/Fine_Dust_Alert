@@ -77,8 +77,9 @@ retrofit을 이용해서 api를 호출 했습니다.
 
 ![image](https://github.com/user-attachments/assets/28eff98b-5750-4e1f-976b-bea0e6efbe94)
 
-그 외에도 AirQualityResponse, Result, Row 에서 
-호출한 XML 데이터를 바탕으로 정보를 뽑아냅니다.
+그 외에도 
+호출한 XML 데이터를 바탕으로 
+AirQualityResponse, Result, Row 을 거쳐서 정보를 뽑아냅니다.
 
 
 
