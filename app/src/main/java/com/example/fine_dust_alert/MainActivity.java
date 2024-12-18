@@ -135,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
         thresholdPm10.setText(String.valueOf(threshold));
     }
 
+    /*
     private void saveUserSettings() {
         int interval = Integer.parseInt(notificationInterval.getText().toString());
         int threshold = Integer.parseInt(thresholdPm10.getText().toString());
@@ -144,6 +145,16 @@ public class MainActivity extends AppCompatActivity {
         editor.putInt("notification_interval", interval);
         editor.putInt("threshold_pm10", threshold);
         editor.apply();
+    }
+    */
+
+
+    private void saveUserSettings() {
+        int interval = Integer.parseInt(notificationInterval.getText().toString());
+        int threshold = Integer.parseInt(thresholdPm10.getText().toString());
+
+        // Call saveUserSettings in AirQualityWorker to handle saving preferences and rescheduling the worker
+        AirQualityWorker.saveUserSettings(this, interval, threshold);
     }
 
     private void startBackgroundWorker() {
