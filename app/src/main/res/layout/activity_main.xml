@@ -3,10 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:gravity="center">
+    android:padding="16dp">
 
-    <!-- 대기상태 -->
+    <!-- 기존 대기 상태, 미세먼지, 초미세먼지 UI -->
     <TextView
         android:id="@+id/air_quality_status"
         android:layout_width="wrap_content"
@@ -16,7 +15,6 @@
         android:textStyle="bold"
         android:layout_marginBottom="16dp" />
 
-    <!-- 미세먼지 -->
     <TextView
         android:id="@+id/pm10_info"
         android:layout_width="wrap_content"
@@ -25,12 +23,47 @@
         android:textSize="18sp"
         android:layout_marginBottom="8dp" />
 
-    <!-- 초미세먼지 -->
     <TextView
         android:id="@+id/pm25_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="초미세먼지"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
 
+    <!-- 사용자 설정 UI -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="알림 주기 (분)"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/notification_interval"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="60"
+        android:inputType="number" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="미세먼지 임계값"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/threshold_pm10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="70"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/save_settings_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="설정 저장"
+        android:layout_marginTop="16dp" />
 </LinearLayout>

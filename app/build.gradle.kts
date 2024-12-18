@@ -37,6 +37,10 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-simplexml:2.9.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
     implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
+    implementation("androidx.work:work-runtime:2.8.1")
+    implementation("androidx.work:work-runtime-ktx:2.8.1")
+    implementation("androidx.work:work-testing:2.8.1")
+
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
