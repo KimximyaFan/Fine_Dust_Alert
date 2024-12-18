@@ -1,15 +1,20 @@
 package com.example.fine_dust_alert;
 
+import android.Manifest;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 import java.util.concurrent.TimeUnit;
@@ -26,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String BASE_URL = "http://openAPI.seoul.go.kr:8088/";
     private static final String PREFS_NAME = "user_settings";
     private static final String CHANNEL_ID = "air_quality_alerts";
+    private static final int POST_NOTIFICATION_PERMISSION_REQUEST_CODE = 1001;
 
     private TextView airQualityStatus;
     private TextView pm10Info;
@@ -49,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
 
         // 알림 채널 생성
         createNotificationChannel();
+
+        // 권한 확인 및 요청
+        checkAndRequestNotificationPermission();
 
         // 사용자 설정 로드
         loadUserSettings();
@@ -160,6 +169,32 @@ public class MainActivity extends AppCompatActivity {
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             if (notificationManager != null) {
                 notificationManager.createNotificationChannel(channel);
+            }
+        }
+    }
+
+    private void checkAndRequestNotificationPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(
+                        this,
+                        new String[]{Manifest.permission.POST_NOTIFICATIONS},
+                        POST_NOTIFICATION_PERMISSION_REQUEST_CODE
+                );
+            }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == POST_NOTIFICATION_PERMISSION_REQUEST_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // 권한이 허용된 경우
+                // 알림을 보낼 준비 완료
+            } else {
+                // 권한이 거부된 경우
+                // 알림 기능 제한 처리 가능
             }
         }
     }
