@@ -58,9 +58,14 @@
 
 사용한 API는 서울시 공공데이터 입니다.
 
+
+
 ![image](https://github.com/user-attachments/assets/241f2462-fe18-4999-963e-cb7200f81a0a)
 
 그중에서 서울시 대기환경 평균 현황을 이용했습니다.
+
+
+
 
 ![image](https://github.com/user-attachments/assets/b9d342a5-775d-450f-983e-b9ec473a0b9f)
 ![image](https://github.com/user-attachments/assets/bc4fc4b0-64e4-43a5-96da-4042df209844)
@@ -68,10 +73,13 @@
 
 retrofit을 이용해서 api를 호출 했습니다.
 
+
+
 ![image](https://github.com/user-attachments/assets/28eff98b-5750-4e1f-976b-bea0e6efbe94)
 
 그 외에도 AirQualityResponse, Result, Row 에서 
 호출한 XML 데이터를 바탕으로 정보를 뽑아냅니다.
+
 
 
 ### 백그라운드 알림
@@ -80,3 +88,7 @@ retrofit을 이용해서 api를 호출 했습니다.
 ![image](https://github.com/user-attachments/assets/62468dfc-4d21-4d70-9aad-b899b5cee111)
 
 Worker 를 이용해서 백그라운드 알림을 구현했습니다.
+
+
+
+
