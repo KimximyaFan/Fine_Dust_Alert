@@ -68,6 +68,12 @@
 
 retrofit을 이용해서 api를 호출 했습니다.
 
+![image](https://github.com/user-attachments/assets/28eff98b-5750-4e1f-976b-bea0e6efbe94)
+
+그 외에도 AirQualityResponse, Result, Row 에서 
+호출한 XML 데이터를 바탕으로 정보를 뽑아냅니다.
+
+
 ### 백그라운드 알림
 
 ![image](https://github.com/user-attachments/assets/1946d721-b294-411c-8d8b-f2ed81fd3fb7)
